@@ -54,12 +54,12 @@ end process;
 process(cs, Din)      -- in sensytivity list all inputs 
 begin
     case cs is
-        when s1 =>  if din = '0' then
-                        D_reg <= '0';
-                        ns <= s1;
-                    else
+        when s1 =>  if din = '1' then
                         D_reg <= '1';
                         ns <= s2;
+                    else
+                        D_reg <= '0';
+                        ns <= s1;
                     end if;
         when s2 => if din ='1' then
                         D_reg <= '0';
